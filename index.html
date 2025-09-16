@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>🎶 バンド管理ツール</h1>
+    <!-- 電光掲示板 -->
+    <div class="marquee-container">
+        <div class="marquee" id="marqueeText"></div>
+    </div>
+
+
+    <!-- 入力と追加ボタン -->
+    <div class="input-group">
+        <input type="text" id="bandInput" placeholder="バンド名を入力">
+        <button class="add-button" onclick="addBand()">追加</button>
+    </div>
+    <p id="alert" style="color: red;"></p>
+
+    <!-- 検索とお気に入り表示ボタン -->
+    <div class="button-group">
+        <input type="text" id="searchInput" placeholder="バンド名で検索" oninput="filterBands()">
+        <button class="favorite-toggle" onclick="toggleSidebar()">⭐ お気に入りを表示</button>
+    </div>
+
+    <!-- 登録済みバンド一覧 -->
+    <h2>🎧 登録済みバンド</h2>
+    <ul id="bandList"></ul>
+
+    <!-- サイドバー -->
+    <div id="sidebar" class="sidebar hidden">
+        <div class="sidebar-header">
+            <h3>⭐ お気に入りバンド</h3>
+            <button class="close-sidebar" onclick="toggleSidebar()">✖ 閉じる</button>
+        </div>
+        <ul id="favoriteList"></ul>
+    </div>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
